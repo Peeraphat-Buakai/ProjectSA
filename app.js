@@ -70,7 +70,7 @@ app.post('/searchbill', (req, res) => {
 // ค้นหาบิลเคลม
 app.post('/searchbillclaim', (req, res) => {
   let data = req.body
-  let sql = 'SELECT * FROM billclaim WHERE idbill = ?'
+  let sql = 'SELECT * FROM billclaim WHERE billid = ?'
   console.log(data)
   let query = db.query(sql, [data.idbill], (err, result) => {
     if (err) throw err;
